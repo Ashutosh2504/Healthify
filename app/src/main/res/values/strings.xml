@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">Saraswati Kidney Care Center</string>
+
+    <string name="fragment_home1">Secondary Analysis Of Your Diet</string>
+    <string name="fragment_home2">Tertiary Analysis Of Your Diet</string>
+
+    <string name="breakfast">BREAKFAST</string>
+    <string name="lunch">LUNCH</string>
+    <string name="dinner">DINNER</string>
+
+    <string name="fit">Ft/In</string>
+    <string name="Cm">Cm</string>
+
+    <string name="open">Open</string>
+    <string name="Close">Close</string>
+    <string name="tag">Your profile is created   Sucessfully</string>
+    <string name="title">We\'re happy that you\'ve taken the first step towards a healthier you. We need a few details to kickstart you journey.</string>
+    <string name="title1">What is your name?</string>
+    <string name="title2Frag">Where are you from?</string>
+    <string name="title2">This will help us persnalize the app for you.</string>
+    <string name="title3Frag">What\'s your gender?</string>
+    <string name="title3">This will help us calculate your target weight</string>
+    <string name="title4Frag">What\'s your Date of Birth?</string>
+    <string name="title4">Your age determines how much yu should consume.(Select your Date of Birth)</string>
+    <string name="title5Frag">How tall are you?</string>
+    <string name="title5">Your height will help us calculate important body starts to help you reach your goals faster.</string>
+    <string name="title6Frags">What\'s your current weight?</string>
+    <string name="title6">Your height will help us determine your goal,and monitor your progress over time</string>
+    <string name="title7Frags">Any Medical Condition we should be aware of?</string>
+    <string name="title7">This info will help us guid you to your fitness goals safely and quickly.</string>
+
+
+    <string name="add_other_specific_disease">Add other specific disease</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="todays_date">Todays Date </string>
+    <string name="select_date">Select Date </string>
+    <string name="_0" translatable="false">0</string>
+
+    <string name="kg">Kg</string>
+    <string name="gm">Gm</string>
+    <string name="dots" translatable="false">.</string>
+
+    <string name="female">Female</string>
+
+    <string name="new_delhi" translatable="false">New Delhi</string>
+    <string name="kolkata" translatable="false">Kolkata</string>
+    <string name="chennai" translatable="false">Chennai</string>
+    <string name="create_your_account" translatable="false">Create Your Account</string>
+    <string name="Login" translatable="false">Login Account</string>
+
+    <string name="_91" translatable="false">+91</string>
+    <string name="enter_mobile_number" translatable="false">Enter Mobile Number</string>
+    <string name="dont_have_account" translatable="false">Already Registered ?</string>
+    <string name="create_a_new_account" translatable="false">Login</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="insert_your_otp" translatable="false">Insert Your OTP</string>
+    <string name="hey_there">Hey there!</string>
+    <string name="enter_your_name">Enter your name</string>
+
+    <string name="ft">Ft</string>
+
+    <string name="height_in_cm">Height in Cm</string>
+
+    <string name="date">Date</string>
+    <string name="month">Month</string>
+
+    <string name="dear_user">Dear </string>
+    <string name="your_profile_is_created_nsucessfully">Your profile is created  Sucessfully</string>
+    <string name="_00" translatable="false">00</string>
+    <string name="bmi" translatable="false">BMI</string>
+
+    <string name="bfp" translatable="false">BFP</string>
+    <string name="health_related_plans" translatable="false">Health related Plans</string>
+    <string name="view_more" translatable="false">View More</string>
+    <string name="nutrition" translatable="false">Nutrition</string>
+    <string name="weightloss" translatable="false">Weightloss</string>
+
+    <string name="helathtips" translatable="false">Helathtips</string>
+
+    <string name="featured" translatable="false">Featured</string>
+    <string name="_200_000" translatable="false">$200.000</string>
+    <string name="out_pakages" translatable="false">Out Pakages</string>
+    <string name="more_details" translatable="false">More Details</string>
+    <string name="add_extra_lunch">Add EXTRA LUNCH</string>
+    <string name="recommended_plans_for_you" translatable="false">Recommended plans for You</string>
+    <string name="based_on_your_fitness_goals" translatable="false">Based on your fitness goals</string>
+    <string name="smart_diet_workout_plan" translatable="false"><![CDATA[Smart Diet & Workout Plan]]></string>
+    <string name="our_ai_powered_plan_to_help_you_lose_20_kgs" translatable="false">Our AI powered plan to help you lose 20 kgs</string>
+    <string name="customizable_diet_plan" translatable="false">Customizable Diet Plan</string>
+    <string name="ria_your_ai_coach_assistant" translatable="false"><![CDATA[Ria-Your AI Coach & Assistant]]></string>
+    <string name="start_at_199_per_month" translatable="false">Start at ₹199 per month</string>
+    <string name="ask_dietitian" translatable="false">Ask Dietitian</string>
+    <string name="add_extra_breakfast">ADD EXTRA BREAKFAST</string>
+    <string name="todays_date1">Todays Date</string>
+    <string name="select_date1">Select Date</string>
+    <string name="todays_time">Todays Time</string>
+    <string name="select_time">Select Time</string>
+    <string name="add" translatable="false">ADD</string>
+    <string name="add_extra_breakfast1">ADD EXTRA BREAKFAST</string>
+    <string name="add_extra_dinner">ADD EXTRA DINNER</string>
+    <string name="kcal" translatable="false">KCAL</string>
+    <string name="analysis_of_your_diet_will_be_based_on_your_24_hours_diet_intake_including_beverages_n_for_3_days">Analysis of Your Diet will be based on your 24 hours diet intake including beverages  for 3 days.</string>
+    <string name="primary_analysis_report">Primary Analysis Report</string>
+    <string name="breakfast_report">BREAKFAST REPORT</string>
+    <string name="lunch_report">LUNCH REPORT</string>
+    <string name="dinner_report">DINNER REPORT</string>
+    <string name="add_water" translatable="false">ADD WATER</string>
+    <string name="secondary_analysis_report">Secondary Analysis Report</string>
+    <string name="tertiary_analysis_report">Tertiary Analysis Report</string>
+    <string name="body_mass_index_kg_cm">Body Mass Index(Kg/cm)</string>
+    <string name="body_fat_percent">Body Fat Percent(%)</string>
+    <string name="ideal_body_weight">Ideal Body Weight</string>
+    <string name="lean_body_weight_kg_m">Lean Body Weight(kg/m)</string>
+    <string name="body_surface_area_sq_m_by_dubois_formula" translatable="false">Body Surface Area(sq/m) by dubois formula</string>
+    <string name="fragment_home">Primary Analysis Of Your Diet</string>
+    <string name="add_lunch">Add Lunch</string>
+    <string name="inch">Inch</string>
+    <string name="male">Male</string>
+    <string name="year">Year</string>
+    <string name="analysis">Analysis of Your Diet will be based on your 24 hourse did in take including averages for 3 days</string>
+    <string name="name">Name</string>
+    <string name="enter_your_name1">Enter Your Name</string>
+    <string name="gender">Gender</string>
+    <string name="male1">Male</string>
+    <string name="female1">Female</string>
+    <string name="others">Others</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_your_phone_no">Enter Your Phone no</string>
+    <string name="email_address">Email Address</string>
+    <string name="enter_your_email_address">Enter Your email address</string>
+    <string name="age">Age</string>
+    <string name="enter_your_age">Enter your age</string>
+    <string name="city">City</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="height">Height</string>
+    <string name="target_weight">Target Weight</string>
+    <string name="body_mass_index">Body Mass Index</string>
+    <string name="body_fat_percent1">Body Fat Percent</string>
+    <string name="add_snack">ADD SNACK</string>
+    <string name="snack_report">SNACK REPORT</string>
+</resources>

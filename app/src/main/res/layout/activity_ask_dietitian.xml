@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context=".AskDietitian">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:layout_alignParentBottom="true"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+       >
+        <LinearLayout
+            android:id="@+id/btn_Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+
+            android:orientation="horizontal"
+            >
+            <ImageView
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/backarrow"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ask_dietitian"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+    android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical"
+      android:background="@drawable/dietitian2"
+        >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="110dp"
+    android:gravity="bottom">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewcall"
+            android:layout_marginLeft="20sp"
+            android:contextClickable="true"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:foregroundGravity="bottom"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shadoweffect"
+            android:backgroundTint="#0096FF"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:text="Call Dietitian"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/cardviewcall"
+            android:contextClickable="true"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+             android:layout_marginTop="10sp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shadoweffect"
+            android:backgroundTint="#0096FF"
+            android:clickable="true"
+
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/whatappimg"
+                    />
+
+
+            <TextView
+                android:id="@+id/callWhatapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginTop="15sp"
+                android:text="WhatsApp Dietitian"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+</RelativeLayout>
+</RelativeLayout>

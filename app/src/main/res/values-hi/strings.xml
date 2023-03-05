@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SaraswatiApp</string>
+    <string name="fragment_home">आपके आहार का प्राथमिक विश्लेषण</string>
+    <string name="fragment_home1">आपके आहार का द्वितीयक विश्लेषण</string>
+    <string name="fragment_home2">आपके आहार का तृतीयक विश्लेषण</string>
+    <string name="breakfast">सुबह का नाश्ता</string>
+    <string name="lunch">दोपहर का भोजन</string>
+    <string name="dinner">रात का खाना</string>
+    <string name="fit">फीट/इंच</string>
+    <string name="Cm">" सेमी"</string>
+    <string name="open">खोलना</string>
+    <string name="Close">बंद करना</string>
+    <string name="tag">आपकी प्रोफ़ाइल सफलतापूर्वक बनाई गई है</string>
+    <string name="title">हमें खुशी है कि आपने स्वस्थ रहने की दिशा में पहला कदम उठाया है। आपकी यात्रा को किकस्टार्ट करने के लिए हमें कुछ विवरणों की आवश्यकता है।</string>
+    <string name="title1">आप नाम काय आहे?</string>
+    <string name="title2Frag">आप कहां से हैं?</string>
+    <string name="title2">यह हमें आपके लिए ऐप को वैयक्तिकृत करने में मदद करेगा।</string>
+    <string name="title3Frag">आपका लिंग क्या है?</string>
+    <string name="title3">इससे हमें आपके लक्षित वजन की गणना करने में मदद मिलेगी</string>
+    <string name="title4Frag">आपके जन्म की तारीख क्या हैं?</string>
+    <string name="title4">आपकी उम्र निर्धारित करती है कि आपको कितना उपभोग करना चाहिए। (अपनी जन्म तिथि चुनें)</string>
+    <string name="title5Frag">तुम कितने लम्बे हो?</string>
+    <string name="title5">आपकी ऊंचाई हमें आपके लक्ष्यों तक तेज़ी से पहुँचने में मदद करने के लिए महत्वपूर्ण बॉडी स्टार्ट की गणना करने में मदद करेगी।</string>
+    <string name="title6Frags">आपका वर्तमान वजन क्या है?</string>
+    <string name="title6">आपकी ऊंचाई हमें आपका लक्ष्य निर्धारित करने में मदद करेगी, और समय के साथ आपकी प्रगति की निगरानी करेगी</string>
+    <string name="title7Frags">किसी भी चिकित्सा स्थिति के बारे में हमें पता होना चाहिए?</string>
+    <string name="title7">" यह जानकारी सुरक्षित और शीघ्रता से आपके फिटनेस लक्ष्यों तक आपका मार्गदर्शन करने में हमारी सहायता करेगी।"</string>
+    <string name="add_other_specific_disease">अन्य विशिष्ट रोग जोड़ें</string>
+    <string name="back">" पीछे"</string>
+    <string name="next">अगला</string>
+    <string name="todays_date">आज की तारीख</string>
+    <string name="select_date">तारीख़ चुनें</string>
+    <string name="add_lunch">दोपहर का भोजन जोड़ें</string>
+    <string name="inch">इंच</string>
+    <string name="kg">किलोग्राम</string>
+    <string name="gm">ग्राम</string>
+    <string name="male">पुरुष</string>
+
+    <string name="female">स्त्री</string>
+    <string name="hey_there">सुनो!</string>
+    <string name="enter_your_name">अपना नाम दर्ज करें</string>
+    <string name="ft">फुट</string>
+    <string name="height_in_cm">सेमी . में ऊँचाई</string>
+    <string name="date">दिनांक</string>
+    <string name="month">" महीना"</string>
+    <string name="year">साल</string>
+    <string name="dear_user">" प्रिय "</string>
+    <string name="your_profile_is_created_nsucessfully">आपकी प्रोफ़ाइल सफलतापूर्वक बनाई गई है</string>
+    <string name="analysis">आपके आहार का विश्लेषण 3 दिनों के औसत सहित आपके द्वारा किए गए 24 घंटों पर आधारित होगा</string>
+    <string name="add_extra_lunch">अतिरिक्त दोपहर का भोजन जोड़ें</string>
+    <string name="add_extra_breakfast">अतिरिक्त नाश्ता जोड़ें</string>
+    <string name="todays_date1">आज की तारीख</string>
+
+    <string name="select_date1">तारीख निवडा</string>
+
+    <string name="todays_time">आज का समय</string>
+    <string name="select_time">समय चुनें</string>
+    <string name="add_extra_breakfast1">" अतिरिक्त नाश्ता जोड़ें"</string>
+    <string name="add_extra_dinner">अतिरिक्त रात्रिभोज जोड़ें</string>
+    <string name="analysis_of_your_diet_will_be_based_on_your_24_hours_diet_intake_including_beverages_n_for_3_days">आपके आहार का विश्लेषण 3 दिनों के लिए पेय पदार्थों सहित आपके 24 घंटे के आहार सेवन पर आधारित होगा।</string>
+    <string name="primary_analysis_report">प्राथमिक विश्लेषण रिपोर्ट</string>
+    <string name="breakfast_report">ब्रेकफास्ट रिपोर्ट</string>
+    <string name="lunch_report">"लंच रिपोर्ट "</string>
+    <string name="dinner_report">रात के खाने की रिपोर्ट</string>
+    <string name="secondary_analysis_report">" माध्यमिक विश्लेषण रिपोर्ट"</string>
+    <string name="tertiary_analysis_report">" तृतीयक विश्लेषण अहवाल"</string>
+    <string name="body_mass_index_kg_cm">बॉडी मास इंडेक्स(किलो/सेमी)</string>
+    <string name="body_fat_percent">" शारीरिक वसा प्रतिशत (%)"</string>
+    <string name="ideal_body_weight">आदर्श शरीर का वजन</string>
+    <string name="lean_body_weight_kg_m">दुबला शरीरका वजन(कि/मी)</string>
+    <string name="body_surface_area_sq_m_by_dubois_formula">शरीर की सतह का क्षेत्रफल (वर्ग/मीटर) डुबोइस सूत्र द्वारा</string>
+//profile
+    <string name="name">नाम</string>
+    <string name="enter_your_name1">अपना नाम दर्ज करें</string>
+    <string name="gender">लिंग</string>
+    <string name="male1">पुरुष</string>
+    <string name="female1">स्त्री</string>
+    <string name="others">
+अन्य</string>
+    <string name="phone_number">
+फ़ोन नंबर</string>
+    <string name="enter_your_phone_no">
+अपना फोन नंबर दर्ज करें</string>
+    <string name="email_address">ईमेल पता</string>
+    <string name="enter_your_email_address">
+अपना ईमेल पता दर्ज करें</string>
+    <string name="age">वय</string>
+    <string name="enter_your_age">अपनी वय दर्ज करें</string>
+    <string name="city">शहर</string>
+    <string name="enter_your_city">अपना शहर दर्ज करें</string>
+    <string name="height">उंचाई</string>
+    <string name="target_weight">नियत वज़न</string>
+    <string name="body_mass_index">बॉडी मास इंडेक्स</string>
+    <string name="body_fat_percent1">शारीरिक वसा प्रतिशत </string>
+</resources>

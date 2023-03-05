@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue"
+    android:focusableInTouchMode="true"
+    tools:context=".LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="@string/create_your_account"
+            android:layout_marginTop="50dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/roundcourner"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            >
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="70dp"
+                android:layout_height="43dp"
+              app:ccp_showFlag="false"
+              app:ccp_textSize="20dp"
+                app:ccp_padding="2dp"
+                app:ccp_showNameCode="false"
+                />
+            <EditText
+                android:id="@+id/mobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="@string/enter_mobile_number"
+                android:ems="10"
+                android:paddingLeft="10dp"
+                android:maxLength="12"
+
+                android:textSize="20sp"
+                android:inputType="number"/>
+        </LinearLayout>
+
+    </LinearLayout>
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/mybutton"
+            android:gravity="center"
+            android:padding="10dp"
+
+            android:text="Registration"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/loginAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_a_new_account"
+            />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
