@@ -1,5 +1,6 @@
 package com.example.healthifyapp;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -86,9 +87,10 @@ public class EightActivity extends AppCompatActivity {
         linearLayout8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EightActivity.this, SevenActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(EightActivity.this, SevenActivity.class);
+                //startActivity(intent);
 
+                onBackPressed();
             }
         });
 
@@ -115,7 +117,6 @@ public class EightActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 for (int i = 0; i < medicalCondnList.size(); i++) {
-                    // Log.d("List", ":" + sedentaryList.get(i));
                     medicalCondd += medicalCondnList.get(i);
                 }
                 openActivity(medicalCondd);
@@ -150,7 +151,6 @@ public class EightActivity extends AppCompatActivity {
 
 
                 medicalConditionDataModels = response.body();
-                Log.e("TAG", "Response = " + response);
                 //medicalConditionAdapters.setMedicalConditionjsonObjectList(medicalConditionjsonObjectList);
                 medicalConditionAdapters.setMedicalConditionjsonObjectList(medicalConditionDataModels);
                 //sendentaryAdapters.setLifeStyleSubItemModelList(lifeStyleSubItemModelList);
@@ -192,7 +192,6 @@ public class EightActivity extends AppCompatActivity {
         weightUnit = getIntent().getStringExtra("weight_unit");
         lifeStyleModel = getIntent().getStringExtra("life_style_model");
         lifeStyleSubModel = getIntent().getStringExtra("life_style_submodel");
-        Log.d("weightunit","");
 
         postData( mobileno,name, city, gender, dob,height, heightUnit,weight, weightUnit, lifeStyleModel, lifeStyleSubModel, medicalCondd,email,age);
 
@@ -210,8 +209,7 @@ public class EightActivity extends AppCompatActivity {
         intent.putExtra("life_style_submodel", lifeStyleSubModel);
         intent.putExtra("medical_condition", medicalCond);
 
-        Log.d("lllllllll came", "" + lifeStyleModel);
-        Log.d("lbst came", "" + lifeStyleSubModel);
+
         //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
@@ -255,7 +253,7 @@ public class EightActivity extends AppCompatActivity {
                 } else {
                     String responseString = "Response code :" + response.code();
                     Log.e("TAG", "Response =" + responseString);
-                    Toast.makeText(EightActivity.this, "", Toast.LENGTH_SHORT).show();
+
                 }
             }
              catch (Exception e)

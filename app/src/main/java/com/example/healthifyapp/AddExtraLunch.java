@@ -110,8 +110,9 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraLunch.this, PrimaryAnalysisDietACtivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(AddExtraLunch.this, PrimaryAnalysisDietACtivity.class);
+              //  startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -149,14 +150,13 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
 
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
         unitspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -236,7 +236,6 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
             UserId = Integer.parseInt(mobilno);
         } catch (NumberFormatException nfe) {
             // Handle the condition when str is not a number.
-            Log.d("Mobile no not as ID",""+nfe.getMessage());
         }
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,7 +259,6 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
                             textViewquantity.setText("");
                             timetext.setText("");
                         }
-               // Toast.makeText(AddExtraLunch.this, "Add diet Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
             }
                     else {
                 NetworkConnectivity.networkConnetivityShowDialog(AddExtraLunch.this);
@@ -351,9 +349,7 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
                         resultdiet=modelList.getResult();
                         // progressBar.setVisibility(View.GONE);
 
-                        Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                    //     for(int i=0; i<resultList.size(); i++) {
                         //                            Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
@@ -436,13 +432,10 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
                     Log.e("TAG", "Response =" + responseString);
                     Gson gson = new Gson();
                     String s1 = gson.toJson(response.body());
-                    Log.e("Response", s1);
 
                 } else if (!response.isSuccessful()) {
 
-                    Toast.makeText(AddExtraLunch.this, "Failed", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
-                    Log.e("TAG", "Response =" + responseString);
 
                 }
             }
@@ -487,13 +480,9 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
                     foodList = response.body();
                     // below line we are running a loop to add data to our adapter class.
                     for (int i = 0; i < foodList.size(); i++) {
-                        Log.d("foodList", ":" + foodList.get(i).getItemName());
                         food.add(foodList.get(i).getItemName());
-                        Log.d("foodName", ":" + food.get(i));
 
                         foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                        Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                        Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                     }
                     for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -555,7 +544,6 @@ public class AddExtraLunch extends AppCompatActivity implements AdapterView.OnIt
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraLunch.this, "Selected Item is: \t" + lunchh, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraLunch.this, "extra_lunch", lunchh);
     }
 }

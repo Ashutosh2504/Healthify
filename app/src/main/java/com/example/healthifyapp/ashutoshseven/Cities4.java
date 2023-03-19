@@ -12,6 +12,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -232,7 +233,7 @@ public class Cities4 extends AppCompatActivity  implements AdapterView.OnItemCli
          city = adapterView.getItemAtPosition(position).toString();
 
         // create Toast with user selected value
-        Toast.makeText(Cities4.this, "Selected Item is: \t" + city, Toast.LENGTH_LONG).show();
+      //  Toast.makeText(Cities4.this, "Selected Item is: \t" + city, Toast.LENGTH_LONG).show();
         Log.d("citiiiiiiiiiiiiiiiii", "" + city);
 
         SharedPreference.saveSharedSetting(Cities4.this,"city",city);

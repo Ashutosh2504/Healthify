@@ -94,7 +94,7 @@ public class ProfileFragment extends Fragment /*implements CompoundButton.OnChec
                     Str_City = Edit_City.getText().toString();
                     Log.d("city", ":" + Str_City);
                     Log.d("Gender IDDD", ":" + gender);
-                    Toast.makeText(getActivity(), "city:" + Str_City, Toast.LENGTH_SHORT).show();
+
                     Str_Height = Float.parseFloat(text_Height.getText().toString());
                     Str_TargetWeight = Float.parseFloat(text_TargetWeight.getText().toString());
 
@@ -106,16 +106,16 @@ public class ProfileFragment extends Fragment /*implements CompoundButton.OnChec
                     if (male.isChecked()) {
                         Str_Gender = "male";
                         SharedPreference.saveSharedSetting(getActivity(), "gender", Str_Gender);
-                        Toast.makeText(getActivity(), Str_Gender, Toast.LENGTH_SHORT).show();
+
                     } else if (female.isChecked()) {
                         Str_Gender = "female";
                         SharedPreference.saveSharedSetting(getActivity(), "gender", Str_Gender);
-                        Toast.makeText(getActivity(), Str_Gender, Toast.LENGTH_SHORT).show();
+
                     } else if (other.isChecked()) {
                         Str_Gender = "other";
                         SharedPreference.saveSharedSetting(getActivity(), "gender", Str_Gender);
 
-                        Toast.makeText(getActivity(), Str_Gender, Toast.LENGTH_SHORT).show();
+
 
                     } else {
                         Toast.makeText(getActivity(), "None selected", Toast.LENGTH_SHORT).show();
@@ -159,18 +159,13 @@ public class ProfileFragment extends Fragment /*implements CompoundButton.OnChec
                   /* Log.d("Sex",""+sexBtn);
                    Str_Gender = sexBtn.getText().toString();
                    Log.d("Gender",""+sexBtn);*/
-                    Log.d("Gender", "" + Str_Gender);
-                    Log.d("city before", ":" + Str_City);
-                    Toast.makeText(getActivity(), "before:" + Str_City, Toast.LENGTH_SHORT).show();
+
                     UpdatePofile(Str_Phone, Str_Name, Str_City, Str_Gender, dob, Str_Height, heightUnit,
                             Str_TargetWeight, weightUnit, medicalCondition, lifeStyleCategory, lifeStyleSubCategory,Str_Email,Str_Age);
-                    Toast.makeText(getActivity(), "after:" + Str_City, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), "after:" + Str_City, Toast.LENGTH_SHORT).show();
 
 
-                    Log.d("city after", ":" + Str_City);
+
                 } catch (Exception e) {
-                    Toast.makeText(getActivity(), "" + e.toString(), Toast.LENGTH_SHORT).show();
                 }
                /* Fragment someFragment = new SomeFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -234,10 +229,8 @@ try {
                 Log.e("TAG", "Response =" + responseString);
                 Gson gson = new Gson();
                 String s1 = gson.toJson(response.body());
-                Log.e("Response", s1);
             } else if (!response.isSuccessful()) {
 
-                Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
                 String responseString = "Response code :" + response.code();
                 Log.e("TAG", "Response =" + responseString);
             }
@@ -276,7 +269,7 @@ try {
                try {
                    if (response != null && response.code() == 200) {
                     String responseString = "Response code :" + response.code();
-                    Toast.makeText(getContext(), "Verify Successfully", Toast.LENGTH_SHORT).show();
+
                     Log.e("TAG", "Response =" + responseString);
                     Gson gson = new Gson();
 
@@ -317,12 +310,10 @@ try {
                         other.setChecked(true);
 
                     }
-                    Log.d("Userdetailssss profile", "Response =" + userAccountDataModel.toString());
 
 
                 } else if (!response.isSuccessful()) {
 
-                    Toast.makeText(getActivity(), "varification Failed", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
                     Log.e("TAG", "Response =" + responseString);
                 }

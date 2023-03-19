@@ -67,7 +67,6 @@ public class FiveActivity extends AppCompatActivity {
                 numberPickerValueFt = i1;
             }
         });
-        Log.d("ft btn selected",""+numberPickerValueFt);
 
         numberPickerInch.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -126,8 +125,6 @@ public class FiveActivity extends AppCompatActivity {
 
 
         //Cm=Float.parseFloat(String.valueOf(numberPickerValueCm));
-        Log.w("Height", String.valueOf(Cm));
-        Toast.makeText(FiveActivity.this, " height"+ftInch+":::"+Cm, Toast.LENGTH_SHORT).show();
 
 
         if (cmNumberPicker != null) {
@@ -171,8 +168,7 @@ public class FiveActivity extends AppCompatActivity {
                     height = ftInch;
                     heightUnit = "ft";
                 }
-                Log.d("inch btn selected",""+numberPickerValueFt+"."+numberPickerValueInch);
-                Log.d("ft btn selected",""+height);
+
                 SharedPreference.saveSharedSetting(FiveActivity.this,"height",height);
 
                 openActivity(height, heightUnit);
@@ -181,8 +177,9 @@ public class FiveActivity extends AppCompatActivity {
         linearLayout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(FiveActivity.this,FourthActivity.class);
-                startActivity(intent);
+               // Intent intent=new Intent(FiveActivity.this,FourthActivity.class);
+                //                startActivity(intent);
+                onBackPressed();
             }
         });
       /*  textView=findViewById(R.id.textviewdot);
@@ -285,7 +282,6 @@ linearLayout1=findViewById(R.id.linearLayout1);
        // intent.putExtra("dob", dob);
         intent.putExtra("height", height);
         intent.putExtra("height_unit", heightUnit);
-        Log.d("height camein Five",""+height);
         //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 

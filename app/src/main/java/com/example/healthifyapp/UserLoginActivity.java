@@ -82,7 +82,6 @@ public class UserLoginActivity extends AppCompatActivity {
                     mobilePhone = editTextmobilenumber.getText().toString().trim();
                     Log.d("Mo.",""+mobilePhone);
                     SharedPreference.saveSharedSetting(UserLoginActivity.this,"mobile_no",mobilePhone);
-                    Toast.makeText(UserLoginActivity.this, "Mob."+mobilePhone, Toast.LENGTH_SHORT).show();
 
                     if (mobilePhone.matches(MobilePattern)) {
                         //  if(mobilePhone.isEmpty() || mobilePhone.length() < 10){

@@ -120,8 +120,9 @@ public class AddExtraBreakFastSecondaryActivity extends AppCompatActivity implem
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraBreakFastSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(AddExtraBreakFastSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
         datetext1 = findViewById(R.id.selectdate);
@@ -169,8 +170,6 @@ public class AddExtraBreakFastSecondaryActivity extends AppCompatActivity implem
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -304,7 +303,6 @@ public class AddExtraBreakFastSecondaryActivity extends AppCompatActivity implem
                             timetext.setText("");
 
                         }
-                          Toast.makeText(AddExtraBreakFastSecondaryActivity.this, "Add Extra Breakfast Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
 
 
                     }
@@ -438,7 +436,6 @@ public class AddExtraBreakFastSecondaryActivity extends AppCompatActivity implem
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -646,7 +643,6 @@ public class AddExtraBreakFastSecondaryActivity extends AppCompatActivity implem
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraBreakFastSecondaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraBreakFastSecondaryActivity.this, "extra_breakfast", breakFastfood);
     }
 }

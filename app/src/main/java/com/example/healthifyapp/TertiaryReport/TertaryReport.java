@@ -88,8 +88,7 @@ public class TertaryReport extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(TertaryReport.this,  DrawerActivity.class);
-                startActivity(intent);
+           onBackPressed();
             }
         });
 
@@ -172,7 +171,6 @@ public class TertaryReport extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -208,8 +206,7 @@ public class TertaryReport extends AppCompatActivity {
 
                             String s1 = gson.toJson(response.body());
                             Log.e("Response", s1);
-                            Log.d("ErRR", ":" + model.toString());
-                            Log.d(" estimate  energy", "Response =" + model.toString());
+
 
                         } else if (!response.isSuccessful()) {
 

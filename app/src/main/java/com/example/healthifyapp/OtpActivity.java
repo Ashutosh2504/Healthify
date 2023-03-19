@@ -63,10 +63,7 @@ public class OtpActivity extends AppCompatActivity {
                 boolean networkConectivity =  NetworkConnectivity.isConnected(OtpActivity.this);
                 if (networkConectivity) {
 
-              //  Intent intent = new Intent(OtpActivity.this,FirstActivity.class);
-                //startActivity(intent);
                 otp = SharedPreference.readSharedSetting(OtpActivity.this, "otp", "0");
-                Log.d("otp in otpActivity",":"+otp);
 
 
 //
@@ -124,9 +121,7 @@ public class OtpActivity extends AppCompatActivity {
                       //   String otptext=item.getOtp();
                      //   edittextotp.setText(otp);
 
-                        Log.e("Response", s1);
-                        Log.d("otp", ":" + otp);
-                        Log.d("userAccountId", ":" + userAccountId);
+
                     }
                     catch (Exception e)
                     {

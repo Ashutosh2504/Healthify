@@ -86,8 +86,7 @@ public class SecondaryReport extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SecondaryReport.this,  DrawerActivity.class);
-                startActivity(intent);
+               onBackPressed();
             }
         });
 

@@ -83,8 +83,7 @@ LinearLayout linearLayout, linearLayoutaccount,languagelinearLayout;
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Settings.this,DrawerActivity.class);
-                startActivity(intent);
+             onBackPressed();
             }
         });
 

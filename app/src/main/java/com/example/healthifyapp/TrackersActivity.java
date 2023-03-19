@@ -24,8 +24,9 @@ public class TrackersActivity extends AppCompatActivity {
         linearLayout_backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(TrackersActivity.this,DrawerActivity.class);
-                startActivity(intent);
+            //    Intent intent=new Intent(TrackersActivity.this,DrawerActivity.class);
+                //                startActivity(intent);
+                onBackPressed();
             }
         });
 

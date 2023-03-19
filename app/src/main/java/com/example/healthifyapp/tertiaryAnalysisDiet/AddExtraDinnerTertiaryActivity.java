@@ -123,8 +123,7 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraDinnerTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+              onBackPressed();
             }
         });
 
@@ -173,7 +172,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -309,7 +307,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
                             textViewquantity.setText("");
                             timetext.setText("");
                         }//
-                         Toast.makeText(AddExtraDinnerTertiaryActivity.this, "Add Extra Dinner Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                     }
                     else {
                         NetworkConnectivity.networkConnetivityShowDialog(AddExtraDinnerTertiaryActivity.this);
@@ -442,7 +439,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -488,7 +484,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
             dietAnalysisDetailList2.add(dietAnalysisDetailList);
             DietDataModel.Root dietDataModel = new DietDataModel.Root(userAccountId,dietAnalysisType,dietTime, dietType, date, dietAnalysisDetailList2);
             Gson g1 = new Gson();
-            Log.v("Sending data:", g1.toJson(dietDataModel));
             Call<DietDataModel.Root> call = dietApi.createPost(dietDataModel);
 
             call.enqueue(new Callback<DietDataModel.Root>() {
@@ -507,7 +502,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(AddExtraDinnerTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -558,11 +552,8 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
                         for (int i = 0; i < foodList.size(); i++) {
                             Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -650,7 +641,6 @@ public class AddExtraDinnerTertiaryActivity extends AppCompatActivity implements
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraDinnerTertiaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraDinnerTertiaryActivity.this, "extra_breakfast", breakFastfood);
     }
 }

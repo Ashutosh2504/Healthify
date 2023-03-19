@@ -120,8 +120,7 @@ SharedPreference sharedPreference = new SharedPreference();
                 linearLayout2.setVisibility(View.GONE);
             }
         });
-        Log.d("lifestylemodel",":"+lifeStyleModel);
-        Toast.makeText(this, "lifestyle"+lifeStyleModel, Toast.LENGTH_SHORT).show();
+
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +132,10 @@ SharedPreference sharedPreference = new SharedPreference();
         linearLayout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SevenActivity.this, SixActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(SevenActivity.this, SixActivity.class);
+                //startActivity(intent);
+            onBackPressed();
+
             }
         });
 
@@ -190,7 +191,7 @@ SharedPreference sharedPreference = new SharedPreference();
                 List<LifeStyleSubItemModel> itemModels1 = response.body();
 
                 lifeStyleSubItemModelList = response.body();
-                Log.e("TAG", "Response = " + response);
+
                 sendentaryAdapters.setLifeStyleSubItemModelList(lifeStyleSubItemModelList);
               }  catch (Exception e)
               {
@@ -200,7 +201,6 @@ SharedPreference sharedPreference = new SharedPreference();
 
             @Override
             public void onFailure(Call<List<LifeStyleSubItemModel>> call, Throwable t) {
-                Log.e("TAG", "Response = " + t.toString());
             }
         });
         Call<List<LifeStyleSubItemModel>> moderatecall = lifeStyleSubItemAPi2.getlifestylesubitemmodel2();
@@ -212,7 +212,6 @@ SharedPreference sharedPreference = new SharedPreference();
 
 
                 lifeStyleSubItemModelList2 = response.body();
-                Log.e("TAG", "Response = " + response);
                 moderateAdapters.setLifeStyleSubItemModelList2(lifeStyleSubItemModelList2);
                }  catch (Exception e)
                {
@@ -234,7 +233,6 @@ SharedPreference sharedPreference = new SharedPreference();
 
 
                 lifeStyleSubItemModelList3 = response.body();
-                Log.e("TAG", "Response = " + response);
                 heavyAdapters.setLifeStyleSubItemModelList3(lifeStyleSubItemModelList3);
                }  catch (Exception e)
                {
@@ -263,14 +261,11 @@ SharedPreference sharedPreference = new SharedPreference();
                 text2 = item.get(1).getText();
                 text3 = item.get(2).getText();
                 lifeStyleModel = text1;
-                Log.d("lifestyleeeee",":"+lifeStyleModel);
                 btnsedentary.setText(text1);
                 btnmoderate.setText(text2);
                 btnheavy.setText(text3);
                 Log.e("Tag", "sucess" + response);
-                Log.d("text1", "" + text1);
-                Log.d("text2", "" + text2);
-                Log.d("text3", "" + text3);
+
                 }  catch (Exception e)
                 {
                     Log.d("Report:","::::"+e.getMessage());
@@ -329,10 +324,9 @@ SharedPreference sharedPreference = new SharedPreference();
         intent.putExtra("weight_unit", weightUnit);
         intent.putExtra("life_style_model", lifeStyleModel);
         intent.putExtra("life_style_submodel", lifeStyleSubModel);
-        Log.d("weight came", "" + weightUnit);
 
-        Log.d("lllllllll came", "" + lifeStyleModel);
-        Log.d("lbst came", "" + lifeStyleSubModel);
+
+
         //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

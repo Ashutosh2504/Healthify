@@ -136,7 +136,6 @@ public class HomeFragments extends Fragment {
                    // tokenedit.setText(tokenn);
                     update(mobileno, tokenn);
                     //Toast.makeText(getActivity(), "Token generated:" + tokenn, Toast.LENGTH_SHORT).show();
-                    Log.d("Token", "Token:" + tokenn);
                 }
             }
         });
@@ -194,7 +193,6 @@ public class HomeFragments extends Fragment {
             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
 
         //    Date resultdate = new Date(Long.parseLong(prefs.getString("")));
-            Log.v("current date ",","+sdf.format(new Date().getTime()));
           //  long diff = new Date().getTime()-resultdate;
            // long diffMinutes = (diff / 1000) / 60;
             //long diffMinutes = (TimeUnit.MILLISECONDS.toMinutes(diff));
@@ -313,13 +311,10 @@ public class HomeFragments extends Fragment {
 
 
                             String s1 = gson.toJson(response.body());
-                            Log.e("Response", s1);
-                            Log.d("Analysis Status", ":" + analysisStatusModel.toString());
                             Log.d("Analysis Status", "Response =" + analysisStatusResponseModel.toString());
 
                         } else if (!response.isSuccessful()) {
 
-                            Toast.makeText(getActivity(), "Analysis  Failed", Toast.LENGTH_SHORT).show();
                             String responseString = "Response code :" + response.code();
                             Log.e("TAG", "Response =" + responseString);
                         }
@@ -327,7 +322,6 @@ public class HomeFragments extends Fragment {
                     } catch (Exception e) {
 
                     }
-                    Log.e("TAG", "Response =" + response);
 
                 }
 
@@ -363,7 +357,6 @@ public class HomeFragments extends Fragment {
                     try {
                         if (response != null && response.code() == 200) {
                             String responseString = "Response code :" + response.code();
-                            Toast.makeText(getContext(), "Verify Successfully", Toast.LENGTH_SHORT).show();
                             Log.e("TAG", "Response =" + responseString);
                             Gson gson = new Gson();
 
@@ -377,25 +370,19 @@ public class HomeFragments extends Fragment {
                            // progressBar.setVisibility(View.GONE);
 
                             String s1 = gson.toJson(response.body());
-                            Log.e("Response", s1);
                             Log.d("result of get", ":" + mobileOtpDataModel.toString());
 
 
 
-                            Log.d("Userdetailssss profile", "Response =" + userAccountDataModel.toString());
 
 
                         } else if (!response.isSuccessful()) {
 
-                            Toast.makeText(getActivity(), "varification Failed", Toast.LENGTH_SHORT).show();
-                            String responseString = "Response code :" + response.code();
-                            Log.e("TAG", "Response =" + responseString);
                         }
 
                     } catch (Exception e) {
 
                     }
-                    Log.e("TAG", "Response =" + response);
 
                 }
 
@@ -441,7 +428,6 @@ public class HomeFragments extends Fragment {
 
 
                     modelList= (ArrayList<BannerDataModel>) response.body();
-                    Log.d("Reeeeeees", "" + response.code());
                     modelList=response.body();
                     Log.d("Reeeeeees", "" + response.body());
                     BannerAdapter adapter = new BannerAdapter(getContext(), modelList);
@@ -497,17 +483,13 @@ try {
                     Log.d("TAG", "Response =" + responseString);
 
                     healthCalculationModel = response.body();
-                  //  Toast.makeText(getContext(), "" + healthCalculationModel.getResult(), Toast.LENGTH_SHORT).show();
 
                     SharedPreference.saveSharedSetting(getActivity(),"bmi",healthCalculationModel.getResult() );
-                    Log.d("BMIIIII", ":" + healthCalculationModel.getResult());
                     textView_bmi.setText(healthCalculationModel.getResult());
 
                 } else if (!response.isSuccessful()) {
 
-                   // Toast.makeText(getActivity(), "Failed in BMI", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
-                    Log.e("Failed in BMI", "Response =" + responseString);
                 }
 
                }  catch (Exception e)
@@ -549,12 +531,10 @@ try {
                 if (response != null && response.code() == 200) {
                     String responseString = "Response code :" + response.code();
                     progressBar.setVisibility(View.GONE);
-                    Log.d("TAG", "Response =" + responseString);
 
                     healthCalculationModel = response.body();
                    // Toast.makeText(getContext(), "" + healthCalculationModel.getResult(), Toast.LENGTH_SHORT).show();
 
-                    Log.d("BMIIIII", ":" + healthCalculationModel.getResult());
                     textView_lbw.setText(healthCalculationModel.getResult());
 
                 } else if (!response.isSuccessful()) {
@@ -604,18 +584,15 @@ try {
                 if (response != null && response.code() == 200) {
                     String responseString = "Response code :" + response.code();
                     progressBar.setVisibility(View.GONE);
-                    Log.d("TAG", "Response =" + responseString);
 //
                     healthCalculationModel = response.body();
                  //   Toast.makeText(getContext(), "" + healthCalculationModel.getResult(), Toast.LENGTH_SHORT).show();
 
-                    Log.d("IBWWWWWW", ":" + healthCalculationModel.getResult());
                     SharedPreference.saveSharedSetting(getActivity(),"ibw",healthCalculationModel.getResult() );
                     textView_ibw.setText(healthCalculationModel.getResult());
 
                 } else if (!response.isSuccessful()) {
 
-                   // Toast.makeText(getActivity(), "Failed in IBW", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
                     Log.e("Failed in IBW", "Response =" + responseString);
                 }
@@ -659,19 +636,16 @@ try {
                 if (response != null && response.code() == 200) {
                     String responseString = "Response code :" + response.code();
                     progressBar.setVisibility(View.GONE);
-                    Log.d("TAG", "Response =" + responseString);
 //
                     healthCalculationModel = response.body();
               //      Toast.makeText(getContext(), "" + healthCalculationModel.getResult(), Toast.LENGTH_SHORT).show();
 
-                    Log.d("BSAAAAA", ":" + healthCalculationModel.getResult());
                     textView_bsa.setText(healthCalculationModel.getResult());
 
                 } else if (!response.isSuccessful()) {
 
                    // Toast.makeText(getActivity(), "Failed in BSW", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
-                    Log.e("Failed in BSW", "Response =" + responseString);
                 }
                }  catch (Exception e)
                {
@@ -708,12 +682,10 @@ catch (Exception e)
                    if (response != null && response.code() == 200) {
                        String responseString = "Response code :" + response.code();
                        progressBar.setVisibility(View.GONE);
-                       Log.d("TAG", "Response =" + responseString);
 //
                        healthCalculationModel = response.body();
                        //   Toast.makeText(getContext(), "" + healthCalculationModel.getResult(), Toast.LENGTH_SHORT).show();
 
-                       Log.d("BFPPPPP", ":" + healthCalculationModel.getResult());
                        SharedPreference.saveSharedSetting(getActivity(), "bfp", healthCalculationModel.getResult());
                        textView_bfp.setText(healthCalculationModel.getResult());
 
@@ -759,11 +731,7 @@ catch (Exception e)
                         if (response != null && response.code() == 200) {
                             String responseString = "Response code :" + response.code();
                             tokenString.setText(response.body().getResult());
-                            //tokenedit.setText(response.body().getResult());
-                            Log.d("Messagee",""+response.body().getResult());
-                            Toast.makeText(getContext(), "Updated Token Successfully", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getContext(), " Token Failed", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -774,7 +742,6 @@ catch (Exception e)
 
                 @Override
                 public void onFailure(Call<MobileDataModel> call, Throwable t) {
-                    Toast.makeText(getContext(), " No Response from Server", Toast.LENGTH_SHORT).show();
 
                 }
             });

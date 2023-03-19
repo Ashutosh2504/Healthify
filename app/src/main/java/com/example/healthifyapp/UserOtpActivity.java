@@ -144,7 +144,6 @@ public class UserOtpActivity extends AppCompatActivity {
 
                         } else if (!response.isSuccessful()) {
 
-                            Toast.makeText(UserOtpActivity.this,"varification Failed",Toast.LENGTH_SHORT).show();
                             String responseString = "Response code :" + response.code();
                             Log.e("TAG","Response =" + responseString);
                         }

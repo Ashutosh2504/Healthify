@@ -157,8 +157,10 @@ public class SnackReportsActivity extends AppCompatActivity {
         linearLayoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SnackReportsActivity.this, PrimaryReport.class);
-                startActivity(intent);
+             //   Intent intent = new Intent(SnackReportsActivity.this, PrimaryReport.class);
+               // startActivity(intent);
+                onBackPressed();
+
             }
         });
     }
@@ -198,8 +200,6 @@ public class SnackReportsActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
 
 
-                        Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(SnackReportsActivity.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
@@ -268,7 +268,6 @@ public class SnackReportsActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -300,7 +299,6 @@ public class SnackReportsActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
 
                         Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(SnackReportsActivity.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
@@ -349,7 +347,6 @@ public class SnackReportsActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }

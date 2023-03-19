@@ -121,8 +121,7 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraSnackTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
         datetext1 = findViewById(R.id.selectdate);
@@ -160,7 +159,6 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -285,7 +283,6 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
                                 timetext.setText("");
                             }
 
-                            Toast.makeText(AddExtraSnackTertiaryActivity.this, "Add Extra Snack Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                             //Toast.makeText(AddExtraLunch.this, "Add diet Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                         }
                         else {
@@ -300,7 +297,6 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(AddExtraSnackTertiaryActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     Log.d("Errorin Time",":"+e.getMessage().toString());
                 }
 
@@ -354,10 +350,7 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
         }
         catch(Exception e)
         {
-            Toast.makeText(AddExtraSnackTertiaryActivity.this, "TTTT"+e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.d("Errorin picking Time",":"+e.getMessage().toString());
-            Toast.makeText(AddExtraSnackTertiaryActivity.this, "DDDD"+e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.d("Errorin picking Date",":"+e.getMessage().toString());
+
         }
 
     }
@@ -422,7 +415,6 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -464,10 +456,8 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
                         for (int i = 0; i < foodList.size(); i++) {
                             Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
                             Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
@@ -522,11 +512,9 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
                         Log.e("TAG", "Response =" + responseString);
                         Gson gson = new Gson();
                         String s1 = gson.toJson(response.body());
-                        Log.e("Response", s1);
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(AddExtraSnackTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -584,7 +572,6 @@ public class AddExtraSnackTertiaryActivity extends AppCompatActivity  implements
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraSnackTertiaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraSnackTertiaryActivity.this, "breakfast", breakFastfood);
     }
 

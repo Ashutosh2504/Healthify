@@ -81,11 +81,9 @@ public class LunchTertiaryReport extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
 
-        Log.d("Adapterrr","Adapter before  createddd");
 
         dialogs(false);
 
-        Log.d("Adapterrr","Adapter createddd");
 
 
         fromdate_txt=findViewById(R.id.selectdate);
@@ -150,8 +148,7 @@ public class LunchTertiaryReport extends AppCompatActivity {
         linearLayoutButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(LunchTertiaryReport.this, TertaryReport.class);
-                        startActivity(intent);
+                      onBackPressed();
                     }
                 });
     }
@@ -193,8 +190,6 @@ public class LunchTertiaryReport extends AppCompatActivity {
                         todaydate_txt.setText("");
                         fromdate_txt.setText("");
                         progressBar.setVisibility(View.GONE);
-                        Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(LunchTertiaryReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                        // for(int i=0; i<resultList.size(); i++) {
@@ -247,7 +242,6 @@ public class LunchTertiaryReport extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }

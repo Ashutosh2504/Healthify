@@ -26,6 +26,7 @@ import com.example.healthifyapp.model.EnergyModel;
 import com.example.healthifyapp.model.WatetIntakeModel;
 import com.google.gson.Gson;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,12 +59,14 @@ String  averageMedLevel="";
     String fromdate="";
     String todaydate="";
 
+    double totalKcal = 0.0;
     ArrayList <Root.Result.DietAnalysisDetails>dietAnalysisDetails;
     List<Root.Result> resultList;
     Root.Result.DietAnalysisDetails dietAnalysisDetailsObj;
     Root.Result result ;
    EnergyModel model;
-   int sum=0;
+    private static final DecimalFormat decfor = new DecimalFormat("0.00");
+    int sum=0;
   //  Button lunchReport_Button;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -95,8 +98,9 @@ String  averageMedLevel="";
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(PrimaryReport.this,  DrawerActivity.class);
-                startActivity(intent);
+              //  Intent intent=new Intent(PrimaryReport.this,  DrawerActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -188,7 +192,9 @@ String  averageMedLevel="";
                         } catch (Exception e) {
                             Log.d("ReportRahul:", "::::" + e.getMessage());
                         }
-                        textView_kcals.setText(Integer.toString(sum));
+                        totalKcal = (sum/4.184);
+
+                        textView_kcals.setText(decfor.format(totalKcal));
 
                     }
                 }
@@ -228,6 +234,7 @@ String  averageMedLevel="";
                             Gson gson = new Gson();
                             // watetIntakeModel=new WatetIntakeModel();
                             model = response.body();
+
                             textView_eer.setText(model.getResult());
 
 

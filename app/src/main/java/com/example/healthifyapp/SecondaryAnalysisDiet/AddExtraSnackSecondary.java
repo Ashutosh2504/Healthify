@@ -121,8 +121,9 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraSnackSecondary.this, SecondaryAnalysisdietActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(AddExtraSnackSecondary.this, SecondaryAnalysisdietActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
         datetext1 = findViewById(R.id.selectdate);
@@ -153,14 +154,12 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
 
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
         unitspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -285,7 +284,6 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
                                 timetext.setText("");
 
                             }//    Toast.makeText(AddExtraSnackSecondary.this, "Add ExtraSnack Successfully"+Time, Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
-                            Toast.makeText(AddExtraSnackSecondary.this, "Add Extra Snack Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                         }
                         else {
                             NetworkConnectivity.networkConnetivityShowDialog(AddExtraSnackSecondary.this);
@@ -299,7 +297,6 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(AddExtraSnackSecondary.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     Log.d("Errorin Time",":"+e.getMessage().toString());
                 }
 
@@ -353,10 +350,7 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
         }
         catch(Exception e)
         {
-            Toast.makeText(AddExtraSnackSecondary.this, "TTTT"+e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.d("Errorin picking Time",":"+e.getMessage().toString());
-            Toast.makeText(AddExtraSnackSecondary.this, "DDDD"+e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.d("Errorin picking Date",":"+e.getMessage().toString());
+
         }
 
     }
@@ -385,7 +379,6 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
 
                         Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
 
                         for (int i=0; i<resultList.size();i++){
@@ -462,10 +455,8 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
                         for (int i = 0; i < foodList.size(); i++) {
                             Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
                             Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
@@ -578,11 +569,9 @@ public class AddExtraSnackSecondary extends AppCompatActivity implements Adapter
               //  kcalstext.setText(breakfast.getValue());
                 originalKcal =Integer.parseInt( breakfast.getValue());
                 //Log.d("found", ":" + kcalstext.getText().toString());
-                Log.d("foundBBBB", ":" + breakFastfood);
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraSnackSecondary.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraSnackSecondary.this, "breakfast", breakFastfood);
     }
 }

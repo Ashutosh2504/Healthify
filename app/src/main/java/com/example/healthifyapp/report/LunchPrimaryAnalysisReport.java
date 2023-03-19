@@ -156,8 +156,10 @@ public class LunchPrimaryAnalysisReport extends AppCompatActivity {
         linearLayoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LunchPrimaryAnalysisReport.this, PrimaryReport.class);
-                startActivity(intent);
+             //  Intent intent = new Intent(LunchPrimaryAnalysisReport.this, PrimaryReport.class);
+               // startActivity(intent);
+
+                onBackPressed();
             }
         });
     }
@@ -198,7 +200,6 @@ public class LunchPrimaryAnalysisReport extends AppCompatActivity {
 
 
                         Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(LunchPrimaryAnalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
@@ -256,10 +257,10 @@ public class LunchPrimaryAnalysisReport extends AppCompatActivity {
                           reportAdapternext.setDietAnalysis(dietAnalysisType);
 */
                         reportAdapternext = new FilterAdaptors(getApplicationContext(), dietAnalysisType);
-                        recyclerView1.setAdapter(reportAdapternext);
+                        recyclerView.setAdapter(reportAdapternext);
                         reportAdapternext.setDietAnalysis(dietAnalysisType);
                         // reportAdapternext.notifyDataSetChanged();
-
+//
 
                     }
                 }
@@ -301,8 +302,6 @@ public class LunchPrimaryAnalysisReport extends AppCompatActivity {
                         resultdiet=modelList.getResult();
 
                         progressBar.setVisibility(View.GONE);
-                        Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(LunchPrimaryAnalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {

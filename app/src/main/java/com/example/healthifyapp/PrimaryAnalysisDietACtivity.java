@@ -60,8 +60,9 @@ public class PrimaryAnalysisDietACtivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DrawerActivity.class);
-                startActivity(intent);
+               onBackPressed();
+               // Intent intent = new Intent(getApplicationContext(), DrawerActivity.class);
+               // startActivity(intent);
             }
         });
         cardViewaddextrabreakfast.setOnClickListener(new View.OnClickListener() {

@@ -79,7 +79,7 @@ public class Gender5 extends AppCompatActivity implements CompoundButton.OnCheck
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("g",""+gender);
+
                  openActivity(gender);
 
             }
@@ -93,18 +93,18 @@ public class Gender5 extends AppCompatActivity implements CompoundButton.OnCheck
             if (R.id.radioMale == buttonView.getId()) {
                 radioFemale.setChecked(false);
                 radioOther.setChecked(false);
-                Log.d("male","ooooo");
+
                 gender = "male";
             } else if (R.id.radioFemale == buttonView.getId()) {
                 radioMale.setChecked(false);
                 radioOther.setChecked(false);
-                Log.d("female","ooooo");
+
                 gender = "female";
 
             } else {
                 radioFemale.setChecked(false);
                 radioMale.setChecked(false);
-                Log.d("oth","ooooo");
+
                 gender = "other";
 
             }
@@ -132,7 +132,7 @@ public class Gender5 extends AppCompatActivity implements CompoundButton.OnCheck
             intent.putExtra("mobile_no", mobileno);
             intent.putExtra("city", city);
             intent.putExtra("gender", gender);
-             Log.d("name came",""+name);
+
             //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
 

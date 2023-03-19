@@ -49,8 +49,7 @@ public class DOB6 extends AppCompatActivity {
 //        int year =  datePicker.getYear();
 
 
-        Toast.makeText(this, "datee"+date, Toast.LENGTH_SHORT).show();
-        Log.d("datee",":"+date);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,8 +64,6 @@ public class DOB6 extends AppCompatActivity {
                      month =  (datePicker.getMonth() + 1);
                      year =  datePicker.getYear();
                     date= day+"/"+month+"/"+year;
-                    Toast.makeText(DOB6.this, ":"+date, Toast.LENGTH_SHORT).show();
-                    Log.d("datee",":"+date);
                     SharedPreference.saveSharedSetting(DOB6.this,"dob",date);
 
                     openActivity(date);
@@ -115,7 +112,7 @@ public class DOB6 extends AppCompatActivity {
 
         intent.putExtra("gender", gender);
         intent.putExtra("dob", dob);
-        Log.d("name came",""+name);
+
         //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 

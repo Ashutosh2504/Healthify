@@ -123,8 +123,9 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddSnack.this, PrimaryAnalysisDietACtivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(AddSnack.this, PrimaryAnalysisDietACtivity.class);
+                ///startActivity(intent);
+                onBackPressed();
             }
         });
         datetext1 = findViewById(R.id.selectdate);
@@ -157,14 +158,12 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
 
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
         unitspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -210,7 +209,6 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
                                 textViewquantity.setText("");
                                 timetext.setText("");
                             }
-                            Toast.makeText(AddSnack.this, "Add Snack Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                             //Toast.makeText(AddExtraLunch.this, "Add diet Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                         }
                         else {
@@ -225,7 +223,6 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(AddSnack.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     Log.d("Errorin Time",":"+e.getMessage().toString());
                 }
 
@@ -261,7 +258,6 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
                             timetext.setText(Time);
                         }
                     }, hour, minute, true);
-                    Log.d("Time:",":"+Time);
                     mTimePicker.setTitle("Select Time");
                     mTimePicker.show();
                 }
@@ -292,9 +288,7 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
         }
         catch(Exception e)
         {
-            Toast.makeText(AddSnack.this, "TTTT"+e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.d("Errorin picking Time",":"+e.getMessage().toString());
-            Toast.makeText(AddSnack.this, "DDDD"+e.getMessage(), Toast.LENGTH_SHORT).show();
+
             Log.d("Errorin picking Date",":"+e.getMessage().toString());
         }
 
@@ -460,7 +454,7 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
                 @Override
                 public void onResponse(Call<DietDataModel.Root> call, Response<DietDataModel.Root> response) {
 
-                    Toast.makeText(AddSnack.this, "Add diet", Toast.LENGTH_SHORT).show();
+
 
                     if (response.code() == 200) {
                         String responseString = "Response code :" + response.code();
@@ -472,7 +466,6 @@ public class AddSnack extends AppCompatActivity implements AdapterView.OnItemCli
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(AddSnack.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 

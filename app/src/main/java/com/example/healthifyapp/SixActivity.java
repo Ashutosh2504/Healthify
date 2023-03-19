@@ -46,7 +46,6 @@ public class  SixActivity extends AppCompatActivity {
             }
         });
         weight=Float.parseFloat(String.valueOf(numberPickerValue1+numberPickerValue2 *0.1));
-        Log.d("weight", "" + weight);
 
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +61,6 @@ public class  SixActivity extends AppCompatActivity {
                     SharedPreference.saveSharedSetting(SixActivity.this, "weight", weight);
                     SharedPreference.saveSharedSetting(SixActivity.this, "weight_unit", weightUnit);
                     weight = Float.parseFloat(String.valueOf(numberPickerValue1 + numberPickerValue2 * 0.1));
-                    Log.d("weight", "" + weight);
 
                     openActivity(weight, weightUnit);
 
@@ -74,8 +72,9 @@ public class  SixActivity extends AppCompatActivity {
         linearLayout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SixActivity.this, FiveActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(SixActivity.this, FiveActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -111,7 +110,6 @@ public class  SixActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         height = bundle.getFloat("height");
         heightUnit = getIntent().getStringExtra("height_unit");
-        Log.d("height came", "" + height);
 
 
         Intent intent = new Intent(SixActivity.this, SevenActivity.class);
@@ -124,7 +122,6 @@ public class  SixActivity extends AppCompatActivity {
         intent.putExtra("height_unit", heightUnit);
         intent.putExtra("weight", weight);
         intent.putExtra("weight_unit", weightUnit);
-        Log.d("weight came", "" + weightUnit);
         //intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

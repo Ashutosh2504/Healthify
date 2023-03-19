@@ -74,8 +74,9 @@ public class FourthActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(FourthActivity.this,ThirdActivity.class);
-                startActivity(intent);
+                //Intent intent=new Intent(FourthActivity.this,ThirdActivity.class);
+               // startActivity(intent);
+                onBackPressed();
             }
         });
 

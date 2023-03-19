@@ -114,8 +114,7 @@ public class AddExtraLunchTertiaryActivity extends AppCompatActivity implements 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraLunchTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+              onBackPressed();
             }
         });
 
@@ -160,7 +159,6 @@ public class AddExtraLunchTertiaryActivity extends AppCompatActivity implements 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -262,7 +260,6 @@ public class AddExtraLunchTertiaryActivity extends AppCompatActivity implements 
                             textViewquantity.setText("");
                             timetext.setText("");
                         }
-                        Toast.makeText(AddExtraLunchTertiaryActivity.this, "Add Extra Lunch Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                     }
                     else {
                         NetworkConnectivity.networkConnetivityShowDialog(AddExtraLunchTertiaryActivity.this);
@@ -352,9 +349,7 @@ public class AddExtraLunchTertiaryActivity extends AppCompatActivity implements 
                         resultdiet=modelList.getResult();
                         // progressBar.setVisibility(View.GONE);
 
-                        Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
 
 
@@ -452,7 +447,6 @@ public class AddExtraLunchTertiaryActivity extends AppCompatActivity implements 
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(AddExtraLunchTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 

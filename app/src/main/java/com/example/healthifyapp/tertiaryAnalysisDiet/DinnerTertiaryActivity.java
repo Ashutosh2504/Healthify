@@ -124,8 +124,7 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DinnerTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -175,7 +174,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -309,7 +307,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
                             textViewquantity.setText("");
                             timetext.setText("");
                         }
-                         Toast.makeText(DinnerTertiaryActivity.this, "Add Dinner Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                     }
                     else {
                         NetworkConnectivity.networkConnetivityShowDialog(DinnerTertiaryActivity.this);
@@ -406,7 +403,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
 
                         Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
 
 
@@ -442,7 +438,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -489,7 +484,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(DinnerTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -540,11 +534,8 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
                         for (int i = 0; i < foodList.size(); i++) {
                             Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -640,7 +631,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         breakFastfood = adapterView.getItemAtPosition(position).toString();
-        Log.d("breakfast", ":" + breakFastfood);
         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
             if (breakFastfood.equalsIgnoreCase(breakfast.getKey())) {
              //   kcalstext.setText(breakfast.getValue());
@@ -650,7 +640,6 @@ public class DinnerTertiaryActivity extends AppCompatActivity implements Adapter
             }
         }
         // create Toast with user selected value
-        Toast.makeText(DinnerTertiaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(DinnerTertiaryActivity.this, "extra_breakfast", breakFastfood);
     }
 

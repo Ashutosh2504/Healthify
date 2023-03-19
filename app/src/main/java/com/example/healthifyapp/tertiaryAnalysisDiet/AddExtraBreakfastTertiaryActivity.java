@@ -121,8 +121,7 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddExtraBreakfastTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+              onBackPressed();
             }
         });
         datetext1 = findViewById(R.id.selectdate);
@@ -158,7 +157,6 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
 
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
 
@@ -170,7 +168,6 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -467,7 +464,6 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
             dietAnalysisDetailList2.add(dietAnalysisDetailList);
             DietDataModel.Root dietDataModel = new DietDataModel.Root(userAccountId,dietAnalysisType,dietTime, dietType, date, dietAnalysisDetailList2);
             Gson g1 = new Gson();
-            Log.v("Sending data:", g1.toJson(dietDataModel));
             Call<DietDataModel.Root> call = dietApi.createPost(dietDataModel);
 
             call.enqueue(new Callback<DietDataModel.Root>() {
@@ -479,14 +475,12 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
                     if (response.code() == 200) {
                         String responseString = "Response code :" + response.code();
                         Toast.makeText(AddExtraBreakfastTertiaryActivity.this, "Add ExtraBreakfast Diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "Response =" + responseString);
                         Gson gson = new Gson();
                         String s1 = gson.toJson(response.body());
                         Log.e("Response", s1);
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(AddExtraBreakfastTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -535,13 +529,10 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
                         foodList = response.body();
                         // below line we are running a loop to add data to our adapter class.
                         for (int i = 0; i < foodList.size(); i++) {
-                            Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
                             Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -637,7 +628,6 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         breakFastfood = adapterView.getItemAtPosition(position).toString();
-        Log.d("breakfast", ":" + breakFastfood);
         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
             if (breakFastfood.equalsIgnoreCase(breakfast.getKey())) {
               //  kcalstext.setText(breakfast.getValue());
@@ -647,7 +637,6 @@ public class AddExtraBreakfastTertiaryActivity extends AppCompatActivity impleme
             }
         }
         // create Toast with user selected value
-        Toast.makeText(AddExtraBreakfastTertiaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(AddExtraBreakfastTertiaryActivity.this, "extra_breakfast", breakFastfood);
     }
 }

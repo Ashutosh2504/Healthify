@@ -107,17 +107,12 @@ public class AddWaterActivity extends AppCompatActivity {
         recyclerView.setAdapter(waterAdapter);
 
 
-        Log.d("Adapterrr","Adapter before  createddd");
-
-
-
-        Log.d("Adapterrr","Adapter createddd");
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddWaterActivity.this, DrawerActivity.class);
-                startActivity(intent);
+
+                onBackPressed();
             }
         });
 
@@ -235,7 +230,6 @@ public class AddWaterActivity extends AppCompatActivity {
                         if (response != null && response.code() == 200) {
                             String responseString = "Response code :" + response.code();
                             // Toast.makeText(getContext(), "Analysis Status ", Toast.LENGTH_SHORT).show();
-                            Log.e("TAG", "Response =" + responseString);
                             Gson gson = new Gson();
                             // watetIntakeModel=new WatetIntakeModel();
                             watetIntakeModel = response.body();
@@ -244,15 +238,12 @@ public class AddWaterActivity extends AppCompatActivity {
                             remainingWater.setText(watetIntakeModel.getRemainingWater());
 
                             String s1 = gson.toJson(response.body());
-                            Log.e("Response", s1);
-                            Log.d("Water Intake", ":" + watetIntakeModel.toString());
                             Log.d("Water Intakeeeeee", "Response =" + watetIntakeModel.toString());
 
                         } else if (!response.isSuccessful()) {
 
                             //  Toast.makeText(getActivity(), "Analysis  Failed", Toast.LENGTH_SHORT).show();
                             String responseString = "Response code :" + response.code();
-                            Log.e("TAG", "Response =" + responseString);
                         }
 
                     } catch (Exception e) {
@@ -304,8 +295,7 @@ public class AddWaterActivity extends AppCompatActivity {
                             model = (List<WaterTrakerModel>) response.body();
 
                             waterAdapter.setDietAnalysisObjectList(model);
-                            Log.d("Analysis Status", ":" + model.toString());
-                            Log.d("Analysis Status", "Response =" + model.toString());
+
                         }
 
                     } catch (Exception e) {
@@ -363,13 +353,11 @@ public class AddWaterActivity extends AppCompatActivity {
 
                           //  Toast.makeText(getActivity(), "Analysis  Failed", Toast.LENGTH_SHORT).show();
                             String responseString = "Response code :" + response.code();
-                            Log.e("TAG", "Response =" + responseString);
                         }
 
                     } catch (Exception e) {
 
                     }
-                    Log.e("TAG", "Response =" + response);
 
                 }
 
@@ -424,15 +412,12 @@ public class AddWaterActivity extends AppCompatActivity {
                             timetext.setText("");
 
                             Log.d("Response", "" + response.body());
-                            Log.d("Success", "" + response.toString());
                             waterTrackerModel = response.body();
-                            Log.d("Response", "" + waterTrackerModel.getMessage());
 
 
 
                         } else if (!response.isSuccessful()) {
 
-                            Toast.makeText(AddWaterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                             String responseString = "Response code :" + response.code();
                             Log.e("TAG", "Response =" + responseString);
 

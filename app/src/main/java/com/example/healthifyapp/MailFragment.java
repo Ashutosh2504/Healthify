@@ -55,8 +55,6 @@ public class MailFragment extends Fragment {
                     tokenString.setText(tokenn);
                     tokenedit.setText(tokenn);
                     update(mobileno, tokenn);
-                    Toast.makeText(getActivity(), "Token generated:" + tokenn, Toast.LENGTH_SHORT).show();
-                    Log.d("Token", "Token:" + tokenn);
                 }
             }
         });

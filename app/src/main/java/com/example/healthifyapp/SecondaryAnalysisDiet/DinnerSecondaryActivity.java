@@ -123,8 +123,9 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DinnerSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(DinnerSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
+                // startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -174,7 +175,6 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -309,7 +309,6 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
                             timetext.setText("");
 
                         }
-                          Toast.makeText(DinnerSecondaryActivity.this, "Add Dinner Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
 
                     }
                     else {
@@ -443,7 +442,6 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -558,13 +556,9 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
                         foodList = response.body();
                         // below line we are running a loop to add data to our adapter class.
                         for (int i = 0; i < foodList.size(); i++) {
-                            Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -648,11 +642,9 @@ public class DinnerSecondaryActivity extends AppCompatActivity implements Adapte
              //   kcalstext.setText(breakfast.getValue());
                // Log.d("found", ":" + kcalstext.getText().toString());
                // originalKcal =Integer.parseInt( kcalstext.getText().toString());
-                Log.d("foundBBBB", ":" + breakFastfood);
             }
         }
         // create Toast with user selected value
-        Toast.makeText(DinnerSecondaryActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(DinnerSecondaryActivity.this, "extra_breakfast", breakFastfood);
     }
 }

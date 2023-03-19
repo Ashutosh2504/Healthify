@@ -102,7 +102,6 @@ public class LoginActivity extends AppCompatActivity {
                 mobilePhone = editTextmobilenumber.getText().toString().trim();
                 Log.d("Mo.",""+mobilePhone);
                 SharedPreference.saveSharedSetting(LoginActivity.this,"mobile_no",mobilePhone);
-                Toast.makeText(LoginActivity.this, "Mob."+mobilePhone, Toast.LENGTH_SHORT).show();
 
                 if (mobilePhone.matches(MobilePattern)) {
                     //  if(mobilePhone.isEmpty() || mobilePhone.length() < 10){
@@ -171,7 +170,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else if (!response.isSuccessful()) {
 
-                    Toast.makeText(LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
                     Log.e("TAG", "Response =" + responseString);
                 }
@@ -188,7 +186,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MobileDataModel> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
 
             }
         });

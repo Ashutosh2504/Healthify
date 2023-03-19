@@ -152,7 +152,6 @@ public static final String SHARED_PREFS = "shared_prefs";
         userNameText.setText(SharedPreference.readSharedSetting(this, "login_name", ""));
         mobileNoText.setText(SharedPreference.readSharedSetting(this, "mobile_no", ""));
         mobileno = SharedPreference.readSharedSetting(this, "mobile_no", "");
-        Log.d("in Drawer",":"+mobileno);
         //getBmiData();
        try {
            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

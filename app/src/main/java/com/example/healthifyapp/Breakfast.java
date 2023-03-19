@@ -117,9 +117,8 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
             public void onClick(View view) {
 
 
+                  onBackPressed();
 
-                    Intent intent = new Intent(Breakfast.this, PrimaryAnalysisDietACtivity.class);
-                    startActivity(intent);
 
 
             }
@@ -172,14 +171,12 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
       //  unitspinner.setOnItemClickListener(this);
                 ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
                 dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                Log.d("unit", "");
                 unitspinner.setAdapter(dignosisspinner);
 
                 unitspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         String newItem=unitspinner.getSelectedItem().toString();
-                        Toast.makeText(getApplicationContext(), "You Selected : " + newItem, Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -206,14 +203,12 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
                     tempQuantity += 1;
 
                     //kcalorie = Integer.parseInt(kcalstext.getText().toString());
-                    Log.d("before add",":"+kcalorie);
                   //  kcalorie = Integer.parseInt(kcalstext.getText().toString());
                     kcalorie =  originalKcal * tempQuantity;
 
 
                  //   // Toast.makeText(AddExtraBreakfast.this, "cal"+kcalorie, Toast.LENGTH_SHORT).show();
                    // kcalstext.setText(String.valueOf(kcalorie));
-                    Log.d("afterr add",":"+kcalorie);
 
                     display(tempQuantity);
                 }  catch (Exception e)
@@ -259,8 +254,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
 
 
                           }
-                                Toast.makeText(Breakfast.this, "Add Breakfast Diet Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
-                              //Toast.makeText(AddExtraLunch//.this, "Add diet Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
 
 
                       }
@@ -299,7 +292,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
                            timetext.setText(Time);
                        }
                    }, hour, minute, true);
-                   Log.d("Time:",":"+Time);
                    mTimePicker.setTitle("Select Time");
                    mTimePicker.show();
                }
@@ -330,9 +322,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
        }
        catch(Exception e)
        {
-           Toast.makeText(Breakfast.this, "TTTT"+e.getMessage(), Toast.LENGTH_SHORT).show();
-           Log.d("Errorin picking Time",":"+e.getMessage().toString());
-           Toast.makeText(Breakfast.this, "DDDD"+e.getMessage(), Toast.LENGTH_SHORT).show();
            Log.d("Errorin picking Date",":"+e.getMessage().toString());
        }
 
@@ -359,81 +348,7 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
 
     }
 
-    /*private void getReports1(int userAccountId) {
 
-        try {
-            //userAccountId= SharedPreference.readSharedSetting(getApplicationContext(), "userAccountId", 0);
-            Retrofit retrofit = new Retrofit.Builder().baseUrl("https://easywaygst.theumangsociety.org")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            LunchPrimaryReportAPI lunchPrimaryReportAPI = retrofit.create(LunchPrimaryReportAPI.class);
-            Call<Root> call = lunchPrimaryReportAPI.getlunchprimaryReportDataModel(userAccountId,fromdate,todaydate);
-
-            call.enqueue(new Callback<Root>() {
-                @Override
-                public void onResponse(Call<Root> call, Response<Root> response) {
-
-                    if (response.code() ==200)
-                    {
-                        modelList = response.body();
-                        resultList = modelList.getResult();
-                        resultdiet=modelList.getResult();
-
-
-                        Log.d("TAG", "Response = " + response.message());
-                        // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
-                        // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
-                        for(int i=0; i<resultList.size(); i++) {
-                            Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
-                            Log.d("DietResultObj", "" + resultList.get(i));
-                         //  dietAnalysisDetailsObj= resultList.get(i).getDietAnalysisDetailsList().get(0);
-                           // dietAnalysisDetails.add(dietAnalysisDetailsObj);
-                           // Log.d("DietResult", "" + dietAnalysisDetails.toString());
-                            //Log.d("DietResult", "" + dietAnalysisDetails.get(i).getkCal().toString());
-                        }
-
-                        for (int i=0; i<resultList.size();i++){
-
-                            try {
-                                if (resultList.get(i).getDietAnalysisType().equalsIgnoreCase("Primary Analysis Of Your Diet")) {
-                                    if (resultList.get(i).getDietType().equalsIgnoreCase("BREAKFAST")) {
-
-                                        dietAnalysisTypeobj = resultdiet.get(i).getDietAnalysisDetailsList().get(0);
-                                        dietAnalysisType.add(dietAnalysisTypeobj);
-
-
-                                    }
-
-                                }
-
-                            }  catch (Exception e)
-                            {
-                                Log.d("ReportRahul:","::::"+e.getMessage());
-                            }
-
-                        }
-
-
-                        reportAdapter = new ItemsAdapters(getApplicationContext(), dietAnalysisType);
-                        recyclerView.setAdapter(reportAdapter);
-                        reportAdapter.setDietAnalysisObjectList(dietAnalysisType);
-
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<Root> call, Throwable t) {
-
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-        catch (Exception e)
-        {
-            Log.d("Report:","::::"+e.getMessage());
-        }
-    }*/
 
     private void getReports(int userAccountId,String fromdate,String todaydate) {
 
@@ -460,7 +375,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
 
                         Log.d("TAG", "Response = " + response.message());
                        // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
                            // Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
@@ -509,7 +423,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -540,12 +453,10 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
             @Override
             public void onResponse(Call<DietDataModel.Root> call, Response<DietDataModel.Root> response) {
 
-             //   Toast.makeText(Breakfast.this, "Add diet", Toast.LENGTH_SHORT).show();
-                Toast.makeText(Breakfast.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
 
                 if (response.code() == 200) {
                     String responseString = "Response code :" + response.code();
-                  //  Toast.makeText(Breakfast.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(Breakfast.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
 
 
 
@@ -556,7 +467,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
 
                 } else if (!response.isSuccessful()) {
 
-                    Toast.makeText(Breakfast.this, "Failed", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
                     Log.e("TAG", "Response =" + responseString);
 
@@ -608,10 +518,8 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
                     for (int i = 0; i < foodList.size(); i++) {
                         Log.d("foodList", ":" + foodList.get(i).getItemName());
                         food.add(foodList.get(i).getItemName());
-                        Log.d("foodName", ":" + food.get(i));
 
                         foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                        Log.d("KCAL", ":" + foodList.get(i).getKCal());
                         Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                     }
@@ -646,7 +554,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         breakFastfood = adapterView.getItemAtPosition(position).toString();
-        Log.d("breakfast", ":" + breakFastfood);
         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
             if (breakFastfood.equalsIgnoreCase(breakfast.getKey())) {
                // kcalstext.setText(breakfast.getValue());
@@ -656,7 +563,6 @@ public class Breakfast extends AppCompatActivity implements AdapterView.OnItemCl
             }
         }
         // create Toast with user selected value
-        Toast.makeText(Breakfast.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(Breakfast.this, "breakfast", breakFastfood);
     }
 }

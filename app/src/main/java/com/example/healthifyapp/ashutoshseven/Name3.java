@@ -32,8 +32,8 @@ public class Name3 extends AppCompatActivity {
 
 
         name = editTextName.getText().toString();
-        Log.d("name1", "" + name);
-        Toast.makeText(Name3.this, "name1", Toast.LENGTH_SHORT).show();
+      //  Log.d("name1", "" + name);
+        //Toast.makeText(Name3.this, "name1", Toast.LENGTH_SHORT).show();
 // postData(editTextName.getText().toString());
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,8 +41,8 @@ public class Name3 extends AppCompatActivity {
                 name = editTextName.getText().toString();
                 mobileno = SharedPreference.readSharedSetting(Name3.this,"mobile_no","0");
                 //editTextName.setText("Ashu");
-                Toast.makeText(Name3.this, "Name" + name, Toast.LENGTH_SHORT).show();
-                Log.d("mo", "" + mobileno);
+             //   Toast.makeText(Name3.this, "Name" + name, Toast.LENGTH_SHORT).show();
+               // Log.d("mo", "" + mobileno);
                 if (name.isEmpty()) {
                     Toast.makeText(Name3.this, "Please enter name", Toast.LENGTH_SHORT).show();
                     return;

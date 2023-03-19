@@ -119,8 +119,7 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DinnerActivity.this, PrimaryAnalysisDietACtivity.class);
-                startActivity(intent);
+               onBackPressed();
             }
         });
 
@@ -157,7 +156,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
 
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
 
@@ -169,7 +167,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected: " + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -221,7 +218,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
                             textViewquantity.setText("");
                             timetext.setText("");
                         }
-                        Toast.makeText(DinnerActivity.this, "Add Dinner Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                     }
                     else {
                         NetworkConnectivity.networkConnetivityShowDialog(DinnerActivity.this);
@@ -381,7 +377,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -431,7 +426,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(DinnerActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -480,12 +474,9 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
                         foodList = response.body();
                         // below line we are running a loop to add data to our adapter class.
                         for (int i = 0; i < foodList.size(); i++) {
-                            Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
                             Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
@@ -574,7 +565,6 @@ public class DinnerActivity extends AppCompatActivity implements AdapterView.OnI
             }
         }
         // create Toast with user selected value
-        Toast.makeText(DinnerActivity.this, "Selected Item is: \t" + breakFastfood, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(DinnerActivity.this, "extra_breakfast", breakFastfood);
     }
 }

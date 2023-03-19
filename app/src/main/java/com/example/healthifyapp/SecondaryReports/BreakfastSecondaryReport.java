@@ -152,8 +152,7 @@ public class BreakfastSecondaryReport extends AppCompatActivity {
         linearLayoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BreakfastSecondaryReport.this, SecondaryReport.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }
@@ -194,9 +193,6 @@ public class BreakfastSecondaryReport extends AppCompatActivity {
                         todaydate_txt.setText("");
                         fromdate_txt.setText("");
 
-                        Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(BreakfastSecondaryReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                     //    for(int i=0; i<resultList.size(); i++) {
                         //                            Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
@@ -248,7 +244,6 @@ public class BreakfastSecondaryReport extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }

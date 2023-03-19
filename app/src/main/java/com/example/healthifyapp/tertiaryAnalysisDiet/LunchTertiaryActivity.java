@@ -115,8 +115,7 @@ EditText  textViewquantity;
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LunchTertiaryActivity.this, TertiaryAnalysisDietActivity.class);
-                startActivity(intent);
+              onBackPressed();
             }
         });
 
@@ -150,14 +149,12 @@ EditText  textViewquantity;
         getAllFoodItems();
         ArrayAdapter dignosisspinner=new ArrayAdapter(getApplicationContext(),android.R.layout.simple_spinner_item,unit);
         dignosisspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Log.d("unit", "");
         unitspinner.setAdapter(dignosisspinner);
 
         unitspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -248,7 +245,6 @@ EditText  textViewquantity;
                                 textViewquantity.setText("");
                                 timetext.setText("");
                             }
-                             Toast.makeText(LunchTertiaryActivity.this, "Add Lunch Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
                         }
                         else {
                             NetworkConnectivity.networkConnetivityShowDialog(LunchTertiaryActivity.this);
@@ -360,7 +356,6 @@ EditText  textViewquantity;
                         resultdiet=modelList.getResult();
                         // progressBar.setVisibility(View.GONE);
 
-                        Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
@@ -439,7 +434,6 @@ EditText  textViewquantity;
 
                     } else if (!response.isSuccessful()) {
 
-                        Toast.makeText(LunchTertiaryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         String responseString = "Response code :" + response.code();
                         Log.e("TAG", "Response =" + responseString);
 
@@ -494,11 +488,8 @@ EditText  textViewquantity;
                         for (int i = 0; i < foodList.size(); i++) {
                             Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -566,11 +557,9 @@ EditText  textViewquantity;
                    // kcalstext.setText(breakfast.getValue());
                     originalKcal =Integer.parseInt( breakfast.getValue());
                    // Log.d("found", ":" + kcalstext.getText().toString());
-                    Log.d("foundBBBB", ":" + lunchh);
                 }
             }
             // create Toast with user selected value
-            Toast.makeText(LunchTertiaryActivity.this, "Selected Item is: \t" + lunchh, Toast.LENGTH_LONG).show();
             SharedPreference.saveSharedSetting(LunchTertiaryActivity.this, "lunch", lunchh);
 
         }

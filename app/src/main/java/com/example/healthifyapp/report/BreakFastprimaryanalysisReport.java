@@ -186,8 +186,9 @@ public class BreakFastprimaryanalysisReport extends AppCompatActivity {
           linearLayoutButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-             Intent intent = new Intent(BreakFastprimaryanalysisReport.this, PrimaryReport.class);
-               startActivity(intent);
+            // Intent intent = new Intent(BreakFastprimaryanalysisReport.this, PrimaryReport.class);
+              // startActivity(intent);
+                 onBackPressed();
              }
             });
 
@@ -234,7 +235,6 @@ public class BreakFastprimaryanalysisReport extends AppCompatActivity {
 
 
                         Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
@@ -302,8 +302,8 @@ public class BreakFastprimaryanalysisReport extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
+                    progressBar.setVisibility(View.VISIBLE);
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -349,9 +349,7 @@ public class BreakFastprimaryanalysisReport extends AppCompatActivity {
 
 
                         Log.d("TAG", "Response = " + response.message());
-                        Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
                         Log.d("Response", "" + modelList.toString());
-                        // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                         for(int i=0; i<resultList.size(); i++) {
                          //   Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
                           //  Log.d("DietResultObj", "" + resultList.get(i));

@@ -113,8 +113,7 @@ EditText textViewquantity;
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LunchActivity.this, PrimaryAnalysisDietACtivity.class);
-                startActivity(intent);
+               onBackPressed();
             }
         });
 
@@ -155,7 +154,6 @@ EditText textViewquantity;
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -362,9 +360,7 @@ EditText textViewquantity;
                         resultdiet=modelList.getResult();
                         // progressBar.setVisibility(View.GONE);
 
-                        Log.d("TAG", "Response = " + response.message());
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
                       //  for(int i=0; i<resultList.size(); i++) {
                         //                            Log.d("DietResult", "" + resultList.get(i).getDietAnalysisDetailsList());
@@ -407,7 +403,6 @@ EditText textViewquantity;
                 @Override
                 public void onFailure(Call<Root> call, Throwable t) {
 
-                    Toast.makeText(getApplicationContext(), "Failure in getting report", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -442,14 +437,11 @@ EditText textViewquantity;
                 if (response.code() == 200) {
                     String responseString = "Response code :" + response.code();
                     Toast.makeText(LunchActivity.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                    Log.e("TAG", "Response =" + responseString);
                     Gson gson = new Gson();
                     String s1 = gson.toJson(response.body());
-                    Log.e("Response", s1);
 
                 } else if (!response.isSuccessful()) {
 
-                    Toast.makeText(LunchActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     String responseString = "Response code :" + response.code();
                     Log.e("TAG", "Response =" + responseString);
 
@@ -502,13 +494,9 @@ EditText textViewquantity;
                     foodList = response.body();
                     // below line we are running a loop to add data to our adapter class.
                     for (int i = 0; i < foodList.size(); i++) {
-                        Log.d("foodList", ":" + foodList.get(i).getItemName());
                         food.add(foodList.get(i).getItemName());
-                        Log.d("foodName", ":" + food.get(i));
 
                         foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                        Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                        Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
 
                     }
                     for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -572,17 +560,14 @@ EditText textViewquantity;
 
 
         lunchh = adapterView.getItemAtPosition(position).toString();
-        Log.d("breakfast", ":" + lunchh);
         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
             if (lunchh.equalsIgnoreCase(breakfast.getKey())) {
                // kcalstext.setText(breakfast.getValue());
                 originalKcal =Integer.parseInt( breakfast.getValue());
               //  Log.d("found", ":" + kcalstext.getText().toString());
-                Log.d("foundBBBB", ":" + lunchh);
             }
         }
         // create Toast with user selected value
-        Toast.makeText(LunchActivity.this, "Selected Item is: \t" + lunchh, Toast.LENGTH_LONG).show();
         SharedPreference.saveSharedSetting(LunchActivity.this, "lunch", lunchh);
 
         }

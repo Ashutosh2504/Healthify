@@ -115,8 +115,9 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LunchSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(LunchSecondaryActivity.this, SecondaryAnalysisdietActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -157,7 +158,6 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String newItem=unitspinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "You Selected" + newItem, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -249,7 +249,6 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
                                 textViewquantity.setText("");
                                 timetext.setText("");
                             }
-                             Toast.makeText(LunchSecondaryActivity.this, "Add Lunch Successfully", Toast.LENGTH_SHORT).show(); // Due to no response from get from api but data is stored.. 200 code is returned and check log for response
 
                         }
                         else {
@@ -362,9 +361,8 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
                         resultdiet=modelList.getResult();
                         // progressBar.setVisibility(View.GONE);
 
-                        Log.d("TAG", "Response = " + response.message());
+
                         // Toast.makeText(BreakFastprimaryanalysisReport.this, "Add diet Successfully", Toast.LENGTH_SHORT).show();
-                        Log.d("Response", "" + modelList.toString());
                         // Log.d("DietResult", "" + modelList.getDietAnalysisDetailsList().toString());
 
                         for (int i=0; i<resultList.size();i++){
@@ -383,7 +381,7 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
 
                             }  catch (Exception e)
                             {
-                                Log.d("ReportRahul:","::::"+e.getMessage());
+
                             }
 
                         }
@@ -512,13 +510,10 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
                         foodList = response.body();
                         // below line we are running a loop to add data to our adapter class.
                         for (int i = 0; i < foodList.size(); i++) {
-                            Log.d("foodList", ":" + foodList.get(i).getItemName());
                             food.add(foodList.get(i).getItemName());
-                            Log.d("foodName", ":" + food.get(i));
 
                             foodWithKcal.put(foodList.get(i).getItemName(), foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodList.get(i).getKCal());
-                            Log.d("KCAL", ":" + foodWithKcal.get(foodList.get(i).getItemName()));
+
 
                         }
                         for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
@@ -562,17 +557,14 @@ public class LunchSecondaryActivity extends AppCompatActivity implements Adapter
 
 
             lunchh = adapterView.getItemAtPosition(position).toString();
-            Log.d("breakfast", ":" + lunchh);
             for (Map.Entry<String, String> breakfast : foodWithKcal.entrySet()) {
                 if (lunchh.equalsIgnoreCase(breakfast.getKey())) {
                  //   kcalstext.setText(breakfast.getValue());
                     originalKcal =Integer.parseInt( breakfast.getValue());
                    // Log.d("found", ":" + kcalstext.getText().toString());
-                    Log.d("foundBBBB", ":" + lunchh);
                 }
             }
             // create Toast with user selected value
-            Toast.makeText(LunchSecondaryActivity.this, "Selected Item is: \t" + lunchh, Toast.LENGTH_LONG).show();
             SharedPreference.saveSharedSetting(LunchSecondaryActivity.this, "lunch", lunchh);
 
         }

@@ -66,8 +66,9 @@ public class SecondaryAnalysisdietActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DrawerActivity.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(getApplicationContext(), DrawerActivity.class);
+                //startActivity(intent);
+                onBackPressed();
             }
         });
         cardViewaddextrabreakfast.setOnClickListener(new View.OnClickListener() {
