@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow
+    android:id="@+id/table"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F0F7F7"
+    android:padding="5dp"
+    android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/item_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/quantity_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/kcal_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+
+        android:textSize="12sp"
+
+        android:text=""  />
+
+    <TextView
+        android:id="@+id/date_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/time_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/protein_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/totalfat_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+
+        android:text="" />
+
+
+
+    <TextView
+        android:id="@+id/totalfiber_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/insoluble_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/soluble_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/carbohydrate_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/energykj_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+        android:text="" />
+    <TextView
+        android:id="@+id/energykcal_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/sodium_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/potasium_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+        android:textSize="12sp"
+
+
+        android:text="" />
+    <TextView
+        android:id="@+id/phosphorus_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+        android:textSize="12sp"
+
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/calcium_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+        android:textSize="12sp"
+
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/magnesium_report"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+
+        android:textSize="12sp"
+
+
+        android:text="" />
+</TableRow>

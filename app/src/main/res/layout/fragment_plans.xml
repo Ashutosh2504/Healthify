@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    tools:context=".PlansFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:longClickable="true"
+        android:layout_marginTop="10dp"
+      app:cardCornerRadius="10dp"
+
+        app:cardElevation="10dp"
+        >
+        <ViewFlipper
+            android:id="@+id/filpeer"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            />
+    </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            
+            >
+            
+    
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recommended_plans_for_you"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/based_on_your_fitness_goals"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="3dp"
+               
+                />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:longClickable="true"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dietplan"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smart_diet_workout_plan"
+                    android:textSize="30dp"
+                   android:layout_marginLeft="10sp"
+                    android:layout_marginTop="90sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_at_199_per_month"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_marginTop="190dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_ai_powered_plan_to_help_you_lose_20_kgs"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customizable_diet_plan"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="Customizable Workout Routine"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ria_your_ai_coach_assistant"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/blue"
+                    android:layout_marginTop="5sp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EXPLORE SMART"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:padding="20dp"
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="80sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:longClickable="true"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dietplan"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smart_diet_workout_plan"
+                    android:textSize="30dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="90sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start at ₹199 per month "
+                    android:textSize="16dp"
+
+                    android:layout_marginLeft="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_marginTop="190dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_ai_powered_plan_to_help_you_lose_20_kgs"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customizable_diet_plan"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="Customizable Workout Routine"
+                    />
+                <TextView
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ria_your_ai_coach_assistant"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/blue"
+                    android:layout_marginTop="5sp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EXPLORE SMART"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:padding="20dp"
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

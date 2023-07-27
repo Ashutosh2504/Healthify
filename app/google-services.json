@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229356522271",
+    "project_id": "saraswatiapp-9abf5",
+    "storage_bucket": "saraswatiapp-9abf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229356522271:android:390866579b653d0d0ffe2a",
+        "android_client_info": {
+          "package_name": "com.example.healthifyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229356522271-e4140qfd623sm11qbgh0tufg4bj2ud7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTPPi1jvEke2tf_xwy0st6pOD-WMxMogw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229356522271-e4140qfd623sm11qbgh0tufg4bj2ud7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:focusableInTouchMode="true"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".tertiaryAnalysisDiet.TertiaryAnalysisDietActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar_layout"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:layout_alignParentBottom="true"
+                app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+                >
+                <LinearLayout
+                    android:id="@+id/btn_Back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/backarrow"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragment_home2"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addwater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:longClickable="true"
+                android:layout_marginTop="10dp"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_water"
+                        android:layout_marginRight="40sp"
+
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <ImageButton
+
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_marginLeft="50sp"
+                        android:background="@drawable/arrowicon1"
+                        />
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                android:longClickable="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:elevation="10dp"
+                        android:src="@drawable/breakfastimg"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/layoutbreakfastsecondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/blue"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:layout_marginLeft="10dp"
+                            android:clickable="true"
+                            android:text="@string/breakfast"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="170sp"
+                            android:layout_marginTop="0sp"
+                            android:background="@drawable/arrowicon1"
+                            android:clickable="true"
+                            android:focusableInTouchMode="true" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addextrabreakfastSecondarycardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:longClickable="true"
+                android:layout_marginTop="10dp"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_extra_breakfast"
+
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <ImageButton
+
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_marginLeft="50sp"
+                        android:background="@drawable/arrowicon1"
+                        />
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview2"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                android:longClickable="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:elevation="10dp"
+                        android:src="@drawable/lunchhelth"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/layoutlunchsecondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:background="@color/blue"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:clickable="true"
+                            android:text="@string/lunch"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+
+                            />
+                        <ImageView
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/arrowImage"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:clickable="true"
+                            android:layout_gravity="right"
+
+                            android:focusableInTouchMode="true"
+                            android:layout_marginLeft="200sp"
+                            android:layout_marginTop="0sp"
+                            android:background="@drawable/arrowicon1"                        />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:longClickable="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/addextralunchseconadarycardview"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_extra_lunch"
+
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <ImageButton
+
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_marginLeft="50sp"
+                        android:background="@drawable/arrowicon1"
+                        />
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview4"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10sp"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+
+                android:longClickable="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:elevation="10dp"
+
+                        android:src="@drawable/samosa" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/blue"
+                        android:orientation="horizontal">
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:clickable="true"
+                            android:text="SNACK"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+
+                            />
+                        <ImageView
+                            android:layout_alignParentRight="true"
+
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:clickable="true"
+                            android:layout_gravity="right"
+                            android:paddingTop="10dp"
+
+                            android:focusableInTouchMode="true"
+                            android:layout_marginLeft="200sp"
+                            android:layout_marginTop="0sp"
+                            android:background="@drawable/arrowicon1"                        />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:longClickable="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/addextrasnack"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADD EXTRA SNACK"
+
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <ImageButton
+
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_marginLeft="50sp"
+
+                        android:background="@drawable/arrowicon1"
+                        />
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview3"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                android:longClickable="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:elevation="10dp"
+                        android:src="@drawable/lunch" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutdinnersecondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/blue"
+                        android:orientation="horizontal">
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10sp"
+                            android:clickable="true"
+                            android:text="@string/dinner"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+
+                            />
+                        <ImageView
+                            android:layout_alignParentRight="true"
+
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:clickable="true"
+                            android:layout_gravity="right"
+                            android:paddingTop="10dp"
+
+                            android:focusableInTouchMode="true"
+                            android:layout_marginLeft="200sp"
+                            android:layout_marginTop="0sp"
+                            android:background="@drawable/arrowicon1"                        />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginBottom="90sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:longClickable="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/addextradinnersecondarycard"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_extra_dinner"
+
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <ImageButton
+
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_marginLeft="50sp"
+
+                        android:background="@drawable/arrowicon1"
+                        />
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
